@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Tarefas Inteligente</title>
+    <link rel="stylesheet" href="style.css">   
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Agenda de Tarefas Inteligente</h1>
+            <p>Organize suas tarefas do dia a dia com categorias e prioridades</p>
+        </header>
+
+        <div class="controls">
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="all">Todas as categorias</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Estudos">Estudos</option>
+                    <option value="Pessoal">Pessoal</option>
+                </select>
+                
+                <select id="sort-by">
+                    <option value="date">Ordenar por Data</option>
+                    <option value="priority">Ordenar por Prioridade</option>
+                </select>
+
+                <button id="clear-completed">
+                    <i class="fas fa-trash"></i> Limpar Concluídas
+                </button>
+            </div>
+
+            <div class="dark-mode-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+
+        <div class="task-count" id="task-counter">
+            <div class="count-item">
+                <span class="count-number" id="total-tasks">0</span>
+                <span class="count-label">Total</span>
+            </div>
+            <div class="count-item">
+                <span class="count-number" id="pending-tasks">0</span>
+                <span class="count-label">Pendentes</span>
+            </div>
+            <div class="count-item">
+                <span class="count-number" id="completed-tasks">0</span>
+                <span class="count-label">Concluídas</span>
+            </div>
+        </div>
+        <br>
+        <div class="main-content">
+            <section class="form-section">
+                <h2><i class="fas fa-plus-circle"></i> Nova Tarefa</h2>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label for="task-name"><i class="fas fa-pencil-alt"></i> Nome da Tarefa</label>
+                        <input type="text" id="task-name" required placeholder="Ex: Fazer relatório">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-category"><i class="fas fa-tag"></i> Categoria</label>
+                        <select id="task-category" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Estudos">Estudos</option>
+                            <option value="Pessoal">Pessoal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-priority"><i class="fas fa-exclamation-circle"></i> Prioridade</label>
+                        <select id="task-priority" required>
+                            <option value="">Selecione a prioridade</option>
+                            <option value="high">Alta</option>
+                            <option value="medium">Média</option>
+                            <option value="low">Baixa</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-date"><i class="fas fa-calendar-day"></i> Data Limite</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+                    
+                    <button type="submit">
+                        <i class="fas fa-plus"></i> Adicionar Tarefa
+                    </button>
+                </form>
+            </section>
+
+            <section class="tasks-section">
+                <h2><i class="fas fa-list-check"></i> Suas Tarefas</h2>
+                <div class="tasks-grid" id="tasks-container">
+                    <div class="empty-state" id="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Nenhuma tarefa encontrada</h3>
+                        <p>Adicione uma nova tarefa usando o formulário ao lado.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
