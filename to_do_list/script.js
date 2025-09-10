@@ -174,6 +174,7 @@ function renderTasks() {
             <span class="task-category">${task.category}</span>
             <p class="task-date"><i class="far fa-calendar"></i> Data limite: ${formattedDate}</p>
             <p><i class="fas fa-signal"></i> Prioridade: ${priorityIcon}</p>
+            <br>
             <div class="task-actions">
                 <button class="btn-complete" data-id="${task.id}">
                     <i class="fas fa-${task.completed ? 'redo' : 'check'}"></i> ${task.completed ? 'Reabrir' : 'Concluir'}
